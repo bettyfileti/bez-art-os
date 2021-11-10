@@ -98,11 +98,6 @@ inTextNumberOfYears.addEventListener("input", function () {
 document.addEventListener("change", doTheMath);
 
 function doTheMath() {
-    console.log("priceOfArtwork:", priceOfArtwork);
-    console.log("artistSalary:", artistSalary);
-    console.log("artworkBudget:", artworkBudget);
-    
-
     inTextNetWorth.innerHTML = internationalNumberFormat.format(bezosWorth);
     bezosCostPercentage = percentageOf(priceOfArtwork, bezosWorth);
    
@@ -150,8 +145,6 @@ function doTheMath() {
 
     //------
 
-    console.log(oneYearSalaryOptions);
-
     if (numberOfArtists === undefined){ //if it's the first time running it
         numberOfArtists = maximumArtists;
     } else if (inTextArtistCount.value != numberOfArtists){ //if artist count changed
@@ -184,6 +177,8 @@ function doTheMath() {
     inTextNumberOfYears.min = 1;
 
     inTextSpendEquivalent.innerHTML = salaryPercentageEquivalent;
+
+    drawChart();
 }
 
 
@@ -193,3 +188,43 @@ function percentageOf(partialValue, totalValue) {
 
 
 //https://editor.p5js.org/bethfileti/sketches/ntH89Rd22
+//--------------------------------------------------------------
+//Pie Chart https://www.codexworld.com/make-responsive-pie-chart-with-google-charts/
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+
+function drawChart() {
+    let artworkBudgetPercentage = percentageOf(artworkBudget, priceOfArtwork);
+    let artistSalaryPercentage = percentageOf(((priceOfArtwork/2) - artworkBudget), priceOfArtwork);
+
+  var data = google.visualization.arrayToDataTable([
+    ['Ditribution', 'Percentage'],
+          [`Investors:\n$${internationalNumberFormat.format(amountToInvestors)}`, investorPercentage],
+          [`Artwork Budget:\n$${internationalNumberFormat.format(artworkBudget)}`, artworkBudgetPercentage],
+          [`Money for Salaries:\n$${internationalNumberFormat.format((priceOfArtwork/2) - artworkBudget)}`, artistSalaryPercentage]
+  ]);
+
+  var options = {
+    title: `Distribution of the $${internationalNumberFormat.format(priceOfArtwork)}`,
+    width: '100%',
+    colors: ['#024D12', '#474BBC', '#A1812F', '#f3b49f', '#f6c7b6'],
+    fontName: "Alegreya Sans",
+    fontSize: 11,
+    backgroundColor: {fill: "#F2F2F2"},
+    titleTextStyle: {
+        fontSize: 16,
+    },
+    chartArea: {left: 0},
+    pieHole: 0.4,
+    legend : {position: "labeled"},
+    reverseCategories: true,
+    tooltip: {ignoreBounds : false}
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+  chart.draw(data, options);
+}
+
+//https://developers.google.com/chart/interactive/docs

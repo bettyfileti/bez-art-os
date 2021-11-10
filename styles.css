@@ -129,15 +129,28 @@ footer {
 /* -------------------------------------------------------------- */
 /* IDs */
 
-#hotSeatTime, #breakBonus {
-    background-color: aquamarine;
-    padding: 2px 8px 2px 8px;
+
+
+  /* -------------------------------------------------------------- */
+  /* Pie Chart */
+.chart-container {
+}
+
+  #chart_wrap {
+    /* position: relative;
+    padding-bottom: 100%;
+    overflow:hidden; */
+    display: flex;
+    padding-top: 24px;
+}
+
+#piechart {
 }
 
 /* -------------------------------------------------------------- */
 /* Media Queries */
 
-@media screen and (max-width: 800px) {
+@media (max-width: 800px) {
     .main {
         flex-direction: column;
     }
