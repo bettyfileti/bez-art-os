@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From A to B</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;500&family=Xanh+Mono:ital@0;1&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="shortcut icon" type="image/jpg" href="assets/critClock-favicon-01.png"/> -->
+</head>
+
+<body>
+    <h1>Bez-<em>Art</em>-os Calculator</h1>
+
+    <section class="main">
+        <div class="column">
+            <p>Instead of focusing on unprofitable art for the public good, a small team of dedicated artists could tackle a more elusive project. Selling one artistic project to Jeff Bezos.</p>
+
+            <ol>
+                <li>Recruit artists</li>
+                <li>Gather investors</li>
+                <li>Sell Jeff Bezos a work of art</li>
+            </ol>
+
+
+            <div class="all-variables-container">
+                <div class="variable-container">
+                    <p class="variable-label">Selling price to Bezos<p>
+                    <p class="variable-value">$
+                        <input id="price-of-artwork" type="number" min="0.0" step="1000000" max="10000000" value="5000000" />
+                    </p>
+                </div>
+                <div class="variable-container">
+                    <p class="variable-label">Minimum artist salary</p>
+                    <p class="variable-value">$
+                        <input id="artist-salary" type="number" min="0.0" step="10000" max="10000000" value="120000" />
+                    </p>
+                </div>
+                <div class="variable-container">
+                    <p class="variable-label">Artwork budget</p>
+                    <p class="variable-value">$
+                        <input id="artwork-budget" type="number" min="0.0" step="10000" max="10000000" value="1000000" />
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class = "step-container">
+                <h2>1. Recruit artists</h2>
+                <div class = "step-descriptor">
+                    <p>
+                    Allowing for an artwork budget of $<span id = "in-text-artwork-budget">1,000,000</span>, and 50% for investors, successful funding would make available <span class = "in-text-value"><span id = "in-text-salary-years">12.5 </span> years</span> at the minimum artist salary.
+                    </p>
+
+                    <p>
+                    If we limit the project to 1-year, we could increase the artist salaries, depending on the number of artists involved. For example, <span class = "in-text-variable"><input id = "in-text-artist-count" type="number" min="0" max ="20" value ="10"></input> artist(s)</span> would earn <span class = "in-text-value">$<span id = "in-text-salary">150,000</span> a year</span>.
+                    </p>
+
+
+                    <p>
+                        If we maintain a standard artist salary of $<span id = "in-text-minimum-salary"></span>, we could deploy <span class = "in-text-value"><span id = "in-text-number-of-artists">000</span> artist(s) </span> to spend <span class ="in-text-variable"><input id ="in-text-number-of-years" type="number" min="0" max="20" value ="111"></input> year(s) </span> to try and create an artwork that Jeff Bezos would buy.
+                    </p>
+                </div>
+            </div>
+
+            <div class = "step-container">
+                <h2>2. Gather investors</h2>
+                <div class = "step-descriptor">
+                    <p>
+                    If investors provide <span class ="in-text-value">$<span id ="in-text-investment">2,500,000</span></span> in upfront costs, they could <span class ="in-text-value">double their money</span> if the artwork sells.
+                    </p>
+                </div>
+            </div>
+
+            <div class = "step-container">
+                <h2>3. Sell Jeff Bezos a work of art</h2>
+                <div class = "step-descriptor">
+                    <p>
+                    Jeff Bezos has a current net worth of <span class ="in-text-value">$<span id = "in-text-net-worth">193,200,000,000</span></span>. For him, spending $<span id = "in-text-artwork-price">5,000,000</span> on a piece of art is the equivalent of a person who has $<span id = "in-text-minimum-salary-2">120,000</span> spending <span class = "in-text-value">$<span id= "in-text-spend-equivalent">3.11</span>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <footer>
+        <p>
+            Made by Betty Fileti, 2021
+        </p>
+    </footer>
+
+    <script src="bezosArtCalculator.js"></script>
+</body>
+
+</html>
