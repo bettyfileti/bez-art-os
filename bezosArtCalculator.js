@@ -70,25 +70,28 @@ priceOfArtworkInput.addEventListener("input", function () {
     priceOfArtwork = priceOfArtworkInput.value;
     inTextArtworkPrice.innerText = internationalNumberFormat.format(priceOfArtwork);
     inTextInvestment.innerText   = internationalNumberFormat.format(priceOfArtwork * .5);
+    doTheMath();
 }, false);
 
 artistSalaryInput.addEventListener("input", function () {
     artistSalary = artistSalaryInput.value;
     inTextMinimumSalary.innerText = internationalNumberFormat.format(artistSalary);
     inTextMinimumSalary2.innerText = internationalNumberFormat.format(artistSalary);
+    doTheMath();
 }, false);
 
 artworkBudgetInput.addEventListener("input", function () {
     artworkBudget = artworkBudgetInput.value;
     inTextArtworkBudget.innerText = internationalNumberFormat.format(artworkBudget);
+    doTheMath();
 }, false);
 
 inTextArtistCount.addEventListener("input", function () {
-    doTheMath();
+    //doTheMath();
 }, false);
 
 inTextNumberOfYears.addEventListener("input", function () {
-    doTheMath();
+    //doTheMath();
 }, false);
 
 
