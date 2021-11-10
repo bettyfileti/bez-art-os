@@ -27,6 +27,7 @@ internationalNumberFormat = new Intl.NumberFormat('en-US') //use to add commas t
 let priceOfArtworkInput = document.getElementById("price-of-artwork");
 let artistSalaryInput = document.getElementById("artist-salary");
 let artworkBudgetInput = document.getElementById("artwork-budget");
+let btnCalculate = document.getElementById("btn-calculate")
 
 //--------------------------------------------------------------
 //Get the outputs from the user
@@ -66,41 +67,45 @@ window.addEventListener("load", function () {
 
 //------
 
+btnCalculate.addEventListener("click", function() {
+    doTheMath();
+});
+
 priceOfArtworkInput.addEventListener("input", function () {
     priceOfArtwork = priceOfArtworkInput.value;
-    inTextArtworkPrice.innerText = internationalNumberFormat.format(priceOfArtwork);
-    inTextInvestment.innerText   = internationalNumberFormat.format(priceOfArtwork * .5);
-    doTheMath();
 }, false);
 
 artistSalaryInput.addEventListener("input", function () {
     artistSalary = artistSalaryInput.value;
-    inTextMinimumSalary.innerText = internationalNumberFormat.format(artistSalary);
-    inTextMinimumSalary2.innerText = internationalNumberFormat.format(artistSalary);
-    doTheMath();
 }, false);
 
 artworkBudgetInput.addEventListener("input", function () {
-    artworkBudget = artworkBudgetInput.value;
-    inTextArtworkBudget.innerText = internationalNumberFormat.format(artworkBudget);
-    doTheMath();
+    artworkBudget = artworkBudgetInput.value;   
 }, false);
 
 inTextArtistCount.addEventListener("input", function () {
-    //doTheMath();
+    displayValues();
 }, false);
 
 inTextNumberOfYears.addEventListener("input", function () {
-    //doTheMath();
+    displayValues();
 }, false);
 
 
-document.addEventListener("change", doTheMath);
+// document.addEventListener("change", doTheMath);
 
 function doTheMath() {
+    console.log("did the math")
+    inTextArtworkPrice.innerText = internationalNumberFormat.format(priceOfArtwork);
+    inTextInvestment.innerText   = internationalNumberFormat.format(priceOfArtwork * .5);
+
+    inTextMinimumSalary.innerText = internationalNumberFormat.format(artistSalary);
+    inTextMinimumSalary2.innerText = internationalNumberFormat.format(artistSalary);
+
     inTextNetWorth.innerHTML = internationalNumberFormat.format(bezosWorth);
     bezosCostPercentage = percentageOf(priceOfArtwork, bezosWorth);
    
+    inTextArtworkBudget.innerText = internationalNumberFormat.format(artworkBudget);
 
     salaryPercentageEquivalent = (bezosCostPercentage / 100) * artistSalary;
     salaryPercentageEquivalent = +salaryPercentageEquivalent.toFixed(2);
@@ -145,21 +150,46 @@ function doTheMath() {
 
     //------
 
-    if (numberOfArtists === undefined){ //if it's the first time running it
-        numberOfArtists = maximumArtists;
-    } else if (inTextArtistCount.value != numberOfArtists){ //if artist count changed
-        numberOfArtists = inTextArtistCount.value;
-    } else {
-        numberOfArtists = maximumArtists;
-    }
+    numberOfArtists = maximumArtists;
+    numberOfYears = timeOptions.length;
 
-    if (numberOfYears === undefined){
-        numberOfYears = timeOptions.length;
-    } else if (inTextNumberOfYears.value != numberOfYears){
-        numberOfYears = inTextNumberOfYears.value;
-    } else {
-        numberOfYears = timeOptions.length;
-    }
+    inTextSalaryYears.innerHTML = salaryYears;
+
+    inTextArtistCount.value = oneYearSalaryOptions[numberOfArtists-1].numberOfArtists;
+    inTextArtistCount.max = maximumArtists;
+    inTextArtistCount.min = 1;
+    inTextSalary.innerHTML = oneYearSalaryOptions[numberOfArtists-1].annualSalary;
+
+    inTextNumberOfArtists.innerHTML = timeOptions[numberOfYears - 1].numberOfArtists;
+    inTextNumberOfYears.value = timeOptions[numberOfYears - 1].numberOfYears;
+    inTextNumberOfYears.max = timeOptions.length;
+    inTextNumberOfYears.min = 1;
+
+    inTextSpendEquivalent.innerHTML = salaryPercentageEquivalent;
+    drawChart();
+}
+
+function displayValues(){
+    console.log("oneYearSalaryOptions", oneYearSalaryOptions);
+    console.log("timeOptions", timeOptions);
+
+    numberOfArtists = inTextArtistCount.value;
+    numberOfYears = inTextNumberOfYears.value;
+    // if (numberOfArtists === undefined){ //if it's the first time running it
+    //     numberOfArtists = maximumArtists;
+    // } else if (inTextArtistCount.value != numberOfArtists){ //if artist count changed
+    //     numberOfArtists = inTextArtistCount.value;
+    // } else {
+    //     numberOfArtists = maximumArtists;
+    // }
+
+    // if (numberOfYears === undefined){
+    //     numberOfYears = timeOptions.length;
+    // } else if (inTextNumberOfYears.value != numberOfYears){
+    //     numberOfYears = inTextNumberOfYears.value;
+    // } else {
+    //     numberOfYears = timeOptions.length;
+    // }
 
     //------
 
@@ -176,9 +206,6 @@ function doTheMath() {
     inTextNumberOfYears.max = timeOptions.length;
     inTextNumberOfYears.min = 1;
 
-    inTextSpendEquivalent.innerHTML = salaryPercentageEquivalent;
-
-    drawChart();
 }
 
 
