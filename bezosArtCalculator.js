@@ -216,7 +216,6 @@ function drawChart() {
         fontSize: 16,
     },
     chartArea: {left: 0},
-    pieHole: 0.4,
     legend : {position: "labeled"},
     reverseCategories: true,
     tooltip: {ignoreBounds : false}
