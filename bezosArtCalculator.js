@@ -84,11 +84,11 @@ artworkBudgetInput.addEventListener("input", function () {
 }, false);
 
 inTextArtistCount.addEventListener("input", function () {
-    //numberOfArtists = inTextArtistCount.value;
-    //do the math and change values in function
+    doTheMath();
 }, false);
 
 inTextNumberOfYears.addEventListener("input", function () {
+    doTheMath();
 }, false);
 
 
