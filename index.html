@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>From A to B</title>
+    <title>Art at Any Cost</title>
 
     <link rel="stylesheet" href="styles.css">
 
@@ -15,12 +15,11 @@
         href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;500&family=Xanh+Mono:ital@0;1&display=swap"
         rel="stylesheet">
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <!-- <link rel="shortcut icon" type="image/jpg" href="assets/critClock-favicon-01.png"/> -->
+    <link rel="shortcut icon" type="image/jpg" href="assets/favicon.png"/>
 </head>
 
 <body>
-    <h1>Bez-<em>Art</em>-os Calculator</h1>
+    <h1>Bezos-<em>Art</em> Calculator</h1>
 
     <section class="main">
         <div class="column">
@@ -28,43 +27,38 @@
                 tackle a more elusive project: Selling art to Jeff Bezos. The initial challenge can be broken into three
                 different steps:</p>
 
-            <ol>
-                <li>Recruit artists</li>
-                <li>Gather investors</li>
-                <li>Sell Jeff Bezos a work of art</li>
-            </ol>
-
-
             <div class="all-variables-container">
                 <div class="variable-container">
-                    <p class="variable-label">Selling price to Bezos
+                    <p class="variable-label">Jeff Bezos pays...
                     <p>
                     <p class="variable-value">$
-                        <input id="price-of-artwork" type="number" min="0.0" step="250000" max="10000000"
-                            value="5000000" />
+                        <input id="price-of-artwork" type="number" min="0.0" step="500000" max="10000000" value="5000000" />
                     </p>
                 </div>
+            </div>
+
+            <div class="step-descriptor">
+                <p>
+                    Jeff Bezos has a current net worth of $<span id="in-text-net-worth">193,200,000,000</span>. For him, spending <span class="in-text-value">$<span id="in-text-artwork-price">5,000,000</span></span> on a piece of art is the equivalent of a person
+                    who has <span class="in-text-value">$<span id="in-text-minimum-salary-2">120,000</span></span> spending <span
+                        class="in-text-value">$<span id="in-text-spend-equivalent">3.11</span></span>.
+                </p>
+            </div>
+
+            <div class="all-variables-container">
                 <div class="variable-container">
                     <p class="variable-label">Minimum artist salary</p>
                     <p class="variable-value">$
                         <input id="artist-salary" type="number" min="0.0" step="10000" max="10000000" value="120000" />
                     </p>
                 </div>
-                <div class="variable-container">
-                    <p class="variable-label">Artwork budget</p>
-                    <p class="variable-value">$
-                        <input id="artwork-budget" type="number" min="0.0" step="10000" max="10000000" value="250000" />
-                    </p>
-
-                </div>
-
-                <div class = "btn-container">
-                    <button type="button" id="btn-calculate">CALCULATE</button>
-                </div>
             </div>
 
-            <div id="chart_wrap">
-                <div id="piechart"></div>
+            <div class="step-descriptor">
+                <p>
+                    Let’s allow for a materials budget of <span class="in-text-value">$<span id="in-text-materials-budget">100,000</span> </span>and 50% of profits for investors. Successful funding creates <span class="in-text-value"><span
+                        id="in-text-salary-years">12.5 </span> years of artist salaries.
+                </p>
             </div>
 
 
@@ -72,56 +66,34 @@
 
         <div class="column">
             <div class="step-container">
-                <h2>1. Recruit artists</h2>
+                <h2>1. Gather Investors</h2>
                 <div class="step-descriptor">
-                    <p>
-                        <strong>Could you make a work of art that Jeff Bezos would definitely buy?</strong></br>Allowing for an artwork budget of $<span id="in-text-artwork-budget">1,000,000</span>, and 50%
-                        for investors, successful funding would make available <span class="in-text-value"><span
-                                id="in-text-salary-years">12.5 </span> years</span> at the minimum artist salary.
-                    </p>
 
                     <p>
-                        If we limit the project to 1-year, we could increase the artist salaries, depending on the
-                        number of artists involved. For example, <span class="in-text-variable"><input
-                                id="in-text-artist-count" type="number" min="0" max="20" value="10"></input>
-                            artist(s)</span> would earn <span class="in-text-value">$<span
-                                id="in-text-salary">150,000</span> </span>for that year's work.
+                        If investors provide 50% upfront costs, they could double their money in a few short years when the artwork sells. However, this challenge is double or nothing. If the artists fail to sell the artwork to Jeff Bezos, the investors get nothing.
                     </p>
 
-
-                    <p>
-                        If we maintain a standard artist salary of $<span id="in-text-minimum-salary"></span>, we could
-                        deploy <span class="in-text-value"><span id="in-text-number-of-artists">000</span> artist(s)
-                        </span> to spend <span class="in-text-variable"><input id="in-text-number-of-years"
-                                type="number" min="0" max="20" value="111"></input> year(s) </span> to try and create an
-                        artwork that Jeff Bezos would buy.
-                    </p>
-
-                    
                 </div>
-            </div>
 
-            <div class="step-container">
-                <h2>2. Gather investors</h2>
+                <h2>2. Recruit Artists</h2>
                 <div class="step-descriptor">
-                    <p>
-                        <strong>It's a double or nothing bet.</strong> </br>If investors provide <span class="in-text-value">$<span
-                                id="in-text-investment">2,500,000</span></span> in upfront costs, they would <span
-                            class="in-text-value">double their money</span>, but only if Jeff Bezos buys the work.
-                    </p>
-                </div>
-            </div>
 
-            <div class="step-container">
+                    <p>
+                       The artists will be presented with a unique challenge, focusing all of their artistic intentions for 1-3 years towards selling artwork to Jeff Bezos. This will be the sole focus of their work for the entirety of the project's timeline.
+                    </p>
+
+                </div>
+
                 <h2>3. Sell Jeff Bezos a work of art</h2>
                 <div class="step-descriptor">
+
                     <p>
-                        Jeff Bezos has a current net worth of $<span id="in-text-net-worth">193,200,000,000</span>. For him, spending <span class="in-text-value">$<span id="in-text-artwork-price">5,000,000</span></span> on a piece of art is the equivalent of a person
-                        who has $<span id="in-text-minimum-salary-2">120,000</span> spending <span
-                            class="in-text-value">$<span id="in-text-spend-equivalent">3.11</span></span>. How do you approach him with the artwork?
+                       We offer no support, insights, or advantages in selling this work to Jeff Bezos. The artists are responsible for ideation, introduction, and process to facilitate and succeed in selling Mr. Bezos on their work.
                     </p>
+
                 </div>
             </div>
+
         </div>
 
 
@@ -130,11 +102,12 @@
 
     <footer>
         <p>
-            Made by Betty Fileti, 2021
+            Made by Betty Fileti, 2022.
         </p>
     </footer>
 
     <script src="bezosArtCalculator.js"></script>
+    
 </body>
 
 </html>
