@@ -1,4 +1,7 @@
-let bezosWorth = 193200000000;
+let url = "https://forbes400.herokuapp.com/api/forbes400/getAllBillionaires";
+//Forbes Billionaires List
+
+let bezosWorth = 190000000000;
 
 let priceOfArtwork;
 let artistSalary;
@@ -40,15 +43,43 @@ let inTextMaterialsBudget = document.getElementById("in-text-materials-budget");
 //Add event listeners in inputs and in-text variables
 window.addEventListener("load", function () {
 
-    //Read starting values
-    priceOfArtwork = priceOfArtworkInput.value; 
-    console.log(numberWithCommas(priceOfArtwork))
-    artistSalary = artistSalaryInput.value;
+    fetch(url)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data){
+        let numberOfBillionaires = data.length;
+        let whereIsBezos;
 
-    //Starting Calculations
-    calculateBezosEquivalent();
-    calculateMaterialsBudget();
-    calculateAvailableSalaryYears()
+        for(let i = 0; i < numberOfBillionaires; i++){
+            let billionaireName = data[i].uri;
+            console.log(billionaireName);
+            if (billionaireName == "jeff-bezos"){
+                whereIsBezos = i;
+                break;
+            }
+            
+        }
+        let bezosData = data[whereIsBezos];
+        bezosWorth = bezosData.finalWorth * 1000000;  
+        inTextNetWorth.innerHTML = numberWithCommas(bezosWorth);      
+    })
+    .then(function(){
+
+        console.log(bezosWorth);
+        //Read starting values
+        priceOfArtwork = priceOfArtworkInput.value; 
+        console.log(numberWithCommas(priceOfArtwork));
+        artistSalary = artistSalaryInput.value;
+
+        //Starting Calculations
+        calculateBezosEquivalent();
+        calculateMaterialsBudget();
+        calculateAvailableSalaryYears();
+    })
+    .catch(function(error){
+        console.log(error);
+    })
 
 }, false);
 
