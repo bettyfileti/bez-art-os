@@ -71,6 +71,7 @@ window.addEventListener("load", function () {
         priceOfArtwork = priceOfArtworkInput.value; 
         console.log(numberWithCommas(priceOfArtwork));
         artistSalary = artistSalaryInput.value;
+        inTextSalary.innerHTML = numberWithCommas(artistSalary);
 
         //Starting Calculations
         calculateBezosEquivalent();
@@ -100,6 +101,7 @@ priceOfArtworkInput.addEventListener("input", function () {
 
 artistSalaryInput.addEventListener("input", function () {
     artistSalary = artistSalaryInput.value;
+    inTextSalary.innerHTML = numberWithCommas(artistSalary);
 
     //Update the in-text salary
     inTextMinimumSalary2.innerText = internationalNumberFormat.format(artistSalary);
