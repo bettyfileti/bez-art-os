@@ -62,7 +62,7 @@ button:active{
 }
 
 .step-descriptor p:last-child{
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .main-idea{
@@ -70,12 +70,17 @@ button:active{
     font-size: 24px;
     line-height: 32px;
     margin-bottom: 24px;
-    border-bottom: solid 1px #C4C4C4;
+    border-bottom: solid 1px #8eff31;
+}
+
+
+.main-idea .in-text-value{
+    color:#7f0f4b;
+    font-weight:bold;
 }
 
 .main-idea #in-text-salary-years{
     color:#474BBC;
-    font-weight:bold;
 }
 
 /* -------------------------------------------------------------- */
@@ -95,6 +100,7 @@ button:active{
     background-color: white;
     padding: 0px 32px 0px 32px;
     min-width: 240px;
+    margin-bottom: 16px;
 }
 
 .btn-container{

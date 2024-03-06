@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art at Any Cost</title>
+    <title>↓ This is bogus</title>
 
     <link rel="stylesheet" href="styles.css">
 
@@ -23,55 +23,63 @@
 
     <section class="main">
         <div class="column">
-            <p>Instead of focusing on unprofitable art for the public good, a small team of dedicated artists could
-                tackle a more elusive project: <u>Selling art to Jeff Bezos</u>. Use this calculator to see why this makes more sense than you want it to.</p>
-
-            <div class="all-variables-container">
-                <div class="variable-container">
-                    <p class="variable-label">Jeff Bezos pays...
-                    <p>
-                    <p class="variable-value">$
-                        <input id="price-of-artwork" type="number" min="0.0" step="500000" max="190000000000" value="5000000" />
-                    </p>
-                </div>
+            <div>
+                <p>
+                    <span class="main-idea">
+                        This project creates 
+                            <span class="in-text-value">
+                                <span id="in-text-salary-years">
+                                    0
+                                </span> 
+                            </span>
+                        years of artists making
+                            <span class="in-text-value">$<span id="in-text-artists-get-paid"></span></span>
+                        per year.</span> 
+                    </span>
+                </p>
             </div>
 
+            <p>Instead of focusing on unprofitable art for the public good, a small team of dedicated artists could
+                tackle a more elusive project: <u>Selling art to Jeff Bezos</u>. Use this calculator to see why this makes more sense than you want it to.</p>
+            
             <div class="step-descriptor">
                 <p>
-                    Jeff Bezos has a current net worth of <span class="in-text-value">$<span id="in-text-net-worth">193,200,000,000</span></span>. For him, spending <span class="in-text-value">$<span id="in-text-artwork-price">5,000,000</span></span> on a piece of art is the equivalent of a person
-                    who has <span class="in-text-value">$<span id="in-text-minimum-salary-2">120,000</span></span> spending <span
+                    Jeff Bezos has a current net worth of <span class="in-text-value">$<span id="in-text-net-worth">198,500,000,000</span></span>. </br> For him, spending <span class="in-text-value">$<span id="in-text-artwork-price">5,000,000</span></span> on a piece of art is the equivalent of a person
+                    who has a net worth of <span class="in-text-value">$<span id="in-text-minimum-salary">120,000</span></span> spending <span
                         class="in-text-value">$<span id="in-text-spend-equivalent">3.11</span></span>.
                 </p>
             </div>
 
             <div class="all-variables-container">
                 <div class="variable-container">
-                    <p class="variable-label">Minimum artist salary</p>
+                    <p class="variable-label">Jeff Bezos pays...
+                    <p>
                     <p class="variable-value">$
-                        <input id="artist-salary" type="number" min="0.0" step="10000" max="10000000" value="120000" />
+                        <input id="price-of-artwork" type="number" min="0.0" step="500000" max="190000000000" value="0" />
                     </p>
                 </div>
             </div>
 
+            <div class="all-variables-container">
+                <div class="variable-container">
+                    <p class="variable-label">Minimum artist salary</p>
+                    <p class="variable-value">$
+                        <input id="artist-salary" type="number" min="0.0" step="10000" max="10000000" value="0" />
+                    </p>
+                </div>
+            </div>
+
+
             <div class="step-descriptor">
                 <p>
-                    We'll plan on paying artists a minimum salary of <span class="in-text-value">$<span id ="in-text-salary"></span></span>.Let’s allow for a materials budget of <span class="in-text-value">$<span id="in-text-materials-budget">100,000</span> </span>and 50% of profits for investors. 
+                    
+                    Let’s account for spending <span id = "in-text-materials-percentage"></span>% of the initial cost for materials: <span class="in-text-value">$<span id="in-text-materials-budget">0</span> </span>.
+                    
+                    And set aside <span id = "in-text-investor-percentage"></span>% of what Bezos pays as the ROI to investors, which would be a payout of <span class="in-text-value">$<span id="in-text-investor-payout"></span></span>. 
+                    This leaves a total of <span class="in-text-value">$<span id ="in-text-total-salary-fund"></span></span> left to fund a one year salary of <span class="in-text-value">$<span id ="in-text-salary"></span></span> for <span class="in-text-value"><span id ="in-text-total-salary-years"></span></span> years. 
                 </p>
             </div>
-            <div>
-                <p>
-                    <span class="main-idea">
-                        This project just created 
-                            <span class="in-text-value">
-                                <span id="in-text-salary-years">
-                                    12.5
-                                </span> 
-                                years of artist salaries.
-                            </span> 
-                        </span>
-                    </span>
-                </p>
-            </div>
+
 
 
         </div>
@@ -114,7 +122,8 @@
 
     <footer>
         <p>
-            Made by Betty Fileti, 2022. Jeff Bezos' net worth is pulled from https://forbes400.herokuapp.com/.
+            <span id = "footer-p"></span>
+            /// Made by Betty Fileti, 2022. Code refreshed in 2024.
         </p>
     </footer>
 
