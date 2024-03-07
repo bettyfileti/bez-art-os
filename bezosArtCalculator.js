@@ -107,6 +107,7 @@ artistSalaryInput.addEventListener("input", function () {
 
     inTextSalary.innerHTML = numberWithCommas(artistSalary);
     inTextMinimumSalary.innerHTML = numberWithCommas(artistSalary);
+    inTextArtistsGetPaid.innerHTML = numberWithCommas(artistSalary);
 }, false);
 
 
@@ -201,6 +202,7 @@ function getBudgets(priceOfArtwork) {
     inTextTotalSalaryFund.innerHTML = numberWithCommas(newMoneyForSalaries);
     inTextSalaryYears.innerHTML = newSalaryYears;
     inTextTotalSalaryYears.innerHTML = newSalaryYears;
+    inTextArtistsGetPaid.innerHTML = numberWithCommas(artistSalary);
 }
 
 //--------------------------------------------------------------
